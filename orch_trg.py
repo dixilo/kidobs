@@ -58,7 +58,7 @@ class TrgManager:
     def _subdir(self, runid):
         if self._subdict['make_subdir']:
             dirname = self._subdict['dirbase']
-            dirname = + str(runid).zfill(self._subdict['n_zfill'])
+            dirname += str(runid).zfill(self._subdict['n_zfill'])
             path = self._path_base.joinpath(dirname)
             if not path.exists():
                 path.mkdir()
@@ -88,7 +88,7 @@ class TrgManager:
         return path.joinpath(figname)
 
     def _trg_path(self, path:Path, trg_index:int):
-        fname = f'trg_{str(trg_index).zfill(self._meas["n_zfill"])}'
+        fname = f'trg_{str(trg_index).zfill(self._meas["n_zfill"])}.rawdata'
 
         return path.joinpath(fname)
 

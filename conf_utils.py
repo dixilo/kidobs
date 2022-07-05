@@ -18,10 +18,10 @@ def read_tone(max_ch:int, tone_setting:dict) -> ToneConf:
         Tone configuration object.
     '''
     return ToneConf(max_ch,
-                    tone_setting['freq_MHz'],
+                    tone_setting['freqs_megahz'],
                     phases=tone_setting.get('phases'),
                     amps=tone_setting.get('amps'),
-                    power=tone_setting.get('power'))
+                    power=tone_setting.get('power', 1))
 
 
 def main():

@@ -22,7 +22,6 @@ class SweepObs:
         self.width = width_megahz
         self.resolution = resolution_megahz
         self.done = False
-        self._fit_result = None
         self.lo_hz = lo_hz
         self.verbose = verbose
         self.power = power
@@ -67,7 +66,7 @@ class SweepObs:
         analyzed : bool
             True if already analyzed.
         '''
-        return self._fit_result is not None
+        return self._fit_results is not None
 
     @property
     def fit_results(self):
