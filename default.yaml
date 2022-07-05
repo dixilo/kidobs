@@ -1,0 +1,47 @@
+env:
+  rhea_comm:
+    path: './rhea_comm'
+    load: true
+  mkid_pylibs:
+    path: './mkid_pylibs'
+    load: true
+
+sg:
+  freq_gigahz: 5.15
+  port: '/dev/ttyACM0'
+
+fpga:
+  ip: '192.168.10.16'
+
+tone:
+  freqs_megahz:
+    - -18.5
+    - 77.23
+  kid_indices:
+    - 0
+    - 1
+
+trg:
+  basedir:
+    path: '.'
+  subdir:
+    dirbase: 'trg'
+    n_zfill: 3
+    make_subdir: true
+  schedule:
+    - start: 2022-07-05T01:00:00+09:00
+      end:   2022-07-02T02:00:00+09:00
+    - start: 2022-07-03T01:00:00+09:00
+      end:   2022-07-03T02:00:00+09:00
+  sweep:
+    width_megahz: 6
+    resolution_megahz: 0.01
+    power: 1
+  meas:
+    length: 1024
+    threshold: 4
+    count: 3
+    rate: 1000
+    position: 100
+    pre_length: 10000
+    n_zfill: 4
