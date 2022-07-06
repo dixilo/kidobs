@@ -164,6 +164,7 @@ class TrgManager:
                             end=target['end'])
 
                 trg_index += 1
+                sleep(1)
 
 
 def main():
